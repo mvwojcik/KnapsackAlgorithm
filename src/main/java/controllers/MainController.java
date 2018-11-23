@@ -28,16 +28,19 @@ public class MainController {
 
     @FXML
     public void encrypt() {
-       // this.path = getItem();
-      //  this.file = new File(path);
+        this.path = getItem();
+        this.file = new File(path);
+plecaczek.setMsg(saveAsBytesArray());
+plecaczek.setSize(this.size);
+plecaczek.encrypt();
 
 
     }
 
     @FXML
     public void decrypt() {
-      //  this.path = getItem();
-      //  this.file = new File(path);
+        this.path = getItem();
+        this.file = new File(path);
 
     }
 
@@ -67,6 +70,11 @@ public class MainController {
     private String getItem() {
         String absolutePath = (String) listview.getSelectionModel().getSelectedItem();
         if (absolutePath == null) {
+            if(listview.getItems().get(0) == null)
+            {
+
+                throw new NullPointerException(" U have to choose item");
+            }
             absolutePath = (String) listview.getItems().get(0);
         }
         System.out.println(absolutePath);
@@ -90,6 +98,7 @@ public class MainController {
             return null;
         }
     }
+
 
 
 }

@@ -1,41 +1,27 @@
 package algorithm;
 
-import values.Values;
+import values.StaticStuff;
 
 import java.math.BigInteger;
+import java.util.BitSet;
 
 public class Plecaczek {
 
-    BigInteger superArray[]; //Klucz PRYWATNY
-    BigInteger modul;
-    BigInteger W;
+    private BigInteger superArray[]; //Klucz PRYWATNY
+    private BigInteger modul;
+    private BigInteger W;
     ///////////////////////////////////////////////
-    BigInteger[] A; // KLUCZ PUBLICZNY
+    private BigInteger[] A; // KLUCZ PUBLICZNY
+    private byte[] msg;
+    private byte[][] msg2D;
+    private int size;
+    private Key key;
+    private BigInteger [] msgg;
 
     public Plecaczek() {
+        key = new Key();
         prepareKey();
-
-
-    }
-
-    private BigInteger[] getPublicKey() {
-return this.A;
-    }
-
-    private byte[] getPrivateKeyPi() {
-return Values.Permutation;
-    }
-
-    private BigInteger getPrivateKeyModul() {
-return this.modul;
-    }
-
-    private BigInteger[] getPrivateKeyB() {
-return this.superArray;
-    }
-
-    private BigInteger getPrivateKeyW() {
-        return this.W;
+        System.out.println();
     }
 
     private void prepareKey() {
@@ -43,47 +29,56 @@ return this.superArray;
          * key generating //trzeba to będzie potem podzielić na oddzielną metodę generującą się odrazu po odpaleniu w maincontroller
          * a potem otwiera się ten plik z listy i podlicza i zwraca i odpala kolejną funkcje bede iwedzial ocb
          */
-        superArray = new BigInteger[64];
-        generateSuperArray();
-        modul = generateModul();
+        superArray = key.generateSuperArray();
+        modul = key.generateModul();
         System.out.println(modul + "modul");
-        W = generateW();
+        W = key.generateW(this.modul);
         System.out.println(W + " liczba pierwsza");
-        generatePIpermutation();//o ch chodzi http://zon8.physd.amu.edu.pl/~miran/lectures/crypto/pkc.pdf
-        A = conductA();
+        key.generatePIpermutation();//o ch chodzi http://zon8.physd.amu.edu.pl/~miran/lectures/crypto/pkc.pdf
+        A = key.conductA(this.W, this.superArray, this.modul);
 
 
     }
 
-    private BigInteger[] conductA() {
-        BigInteger temp[] = new BigInteger[64];
-        for (int i = 0; i < 64; i++) {
-            temp[i] = (W.multiply(this.superArray[Values.Permutation[i]])).mod(this.modul);
+    public void setMsg(byte[] msg) {
+        this.msg = msg;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+
+    public void encrypt() {
+        this.msg2D = StaticStuff.saveAs2DBytesArray(msg, size);
+BigInteger[] results = new BigInteger[size];
+        for (int i = 0; i < size; i++) {
+            results[i] = conductMsg(msg2D[i], A);
         }
-        return temp;
+        System.out.println("***********-------------*******************");
+        for (BigInteger temp: results) {            System.out.println(temp); }
+        System.out.println("***********-------------*******************");
+        msgg=results;
     }
 
-    private void generateSuperArray() {
-        BigInteger temp = new BigInteger("2");
-        for (int i = 0; i < 64; i++) {
-            System.out.println(superArray[i] = temp.pow(i));
-        }
-    }
-
-    private BigInteger generateModul() {
-        BigInteger temp = new BigInteger("2");
-
-        return temp.pow(65);//43 randomowo modul musi byc wiekszy od sumy wygenerowanego ciągu superrosnącego
-    }
-
-    private BigInteger generateW() //nwd(W,M)=1 gdzie M to modul
+    public void decrypt()
     {
-        return new BigInteger(String.valueOf(modul)).nextProbablePrime();
+        
     }
 
-    private byte[] generatePIpermutation() {
-        return Values.Permutation;
+    private BigInteger conductMsg(byte[] msg, BigInteger[] A) {
+        BitSet bitSet;
+        bitSet = BitSet.valueOf(msg);
+        BigInteger sum = new BigInteger("0");
+        boolean temp;
+        for (int i = 0; i < 64; i++) {
+            temp = bitSet.get(i);
+            if (temp == true) {
+                sum = sum.add(A[i]);
+            }
+            System.out.println(sum);
+        }
+        return sum;
     }
-
 
 }
