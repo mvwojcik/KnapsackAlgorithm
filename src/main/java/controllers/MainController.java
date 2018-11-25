@@ -5,6 +5,7 @@ import algorithm.Plecaczek;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
+import values.StaticStuff;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,16 +24,18 @@ public class MainController {
     private String extension;
     private Plecaczek plecaczek;
     @FXML
-    public void initialize() { plecaczek = new Plecaczek();   }
+    public void initialize() {   }
 
 
     @FXML
     public void encrypt() {
         this.path = getItem();
         this.file = new File(path);
+        plecaczek = new Plecaczek();
 plecaczek.setMsg(saveAsBytesArray());
 plecaczek.setSize(this.size);
 plecaczek.encrypt();
+StaticStuff.saveStringToFile(plecaczek.getSize(), plecaczek.getMsgg(),extension);
 
 
     }
@@ -41,7 +44,10 @@ plecaczek.encrypt();
     public void decrypt() {
         this.path = getItem();
         this.file = new File(path);
-
+        plecaczek = new Plecaczek();
+        plecaczek.setMsgg(StaticStuff.saveFileToString(plecaczek,extension));
+       plecaczek.decrypt();
+StaticStuff.saveBytestoFile(plecaczek,extension);
     }
 
     @FXML
@@ -51,7 +57,8 @@ plecaczek.encrypt();
     public void openFileChooser() {
         FileChooser fc = new FileChooser();  //Inicjalizacja fc
         fc.setInitialDirectory(new File((System.getProperty("user.dir"))+"\\test"));
-        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("txt", "*.txt"), new FileChooser.ExtensionFilter("jpg", "*.jpg"));
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("txt", "*.txt"),new FileChooser.ExtensionFilter("pdf","*.pdf"),
+        new FileChooser.ExtensionFilter("jpg", "*.jpg"));
 
         File selectedFile = fc.showOpenDialog(null); //przypisz wybrany w fc plik do selectedFile
         fileIsNull(selectedFile,fc);

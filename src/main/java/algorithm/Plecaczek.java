@@ -2,27 +2,46 @@ package algorithm;
 
 import values.StaticStuff;
 
-import javax.jws.soap.SOAPBinding;
 import java.math.BigInteger;
 import java.util.BitSet;
 
 public class Plecaczek {
+    private Key key;
 
     private BigInteger superArray[]; //Klucz PRYWATNY
     private BigInteger modul;
     private BigInteger W;
     ///////////////////////////////////////////////
     private BigInteger[] A; // KLUCZ PUBLICZNY
+
     private byte[] msg;
     private byte[][] msg2D;
-    private int size;
-    private Key key;
+
+    public int size ;
     private BigInteger[] msgg;
 
     public Plecaczek() {
         key = new Key();
         prepareKey();
         System.out.println();
+    }
+
+    public byte[][] getMsg2D() {
+        return msg2D;
+    }
+
+    public BigInteger[] getMsgg() {
+        return msgg;
+    }
+    public void setMsgg(String[] tab)
+    {
+        msgg = new BigInteger[tab.length];
+        for (int i=0; i<tab.length;i++)
+       this.msgg[i]= new BigInteger(tab[i]);
+    }
+    public byte [] getMsg()
+    {
+        return this.msg;
     }
 
     private void prepareKey() {
@@ -50,68 +69,73 @@ public class Plecaczek {
     public void setSize(int size) {
         this.size = size;
     }
-
+    public int getSize() {
+        return this.size;
+    }
 
     public void encrypt() {
-        System.out.println("\nENCRYPTING");
         this.msg2D = StaticStuff.saveAs2DBytesArray(msg, size);
         BigInteger[] results = new BigInteger[size];
         for (int i = 0; i < size; i++) {
             results[i] = conductMsg(msg2D[i], A);
         }
-        for (BigInteger temp : results) {
-            System.out.println(temp);
-        }
         msgg = results;
-        System.out.println("*****************************************");
-        decrypt();
     }
-
     public void decrypt() {
         System.out.println("DECRYPTING\n");
-        BigInteger d ;
-        byte[][] temp1 = new byte [size][8];
+
         byte[][] temp = new byte[size][8];
 
         for (int i = 0; i < msgg.length; i++) {
+
             BitSet bitSet = new BitSet(64);
             bitSet.clear();
 
-            d = (msgg[i].multiply(W.modInverse(this.modul)).mod(this.modul));
-            System.out.println("\nD = "+d);
-            BigInteger result = new BigInteger("0");
-            for (int j = superArray.length -1 ; j >= 0; j--) {
-                result = result.add(superArray[j]);
-                if (result.compareTo(d) == 1) {
-                    result = result.subtract(superArray[j]);
-                    bitSet.set(j,false);
-                } else {
-                    bitSet.set(j, true);
-                }
-                bitSet.set(64,true);
-            }
-            System.out.println();
+            BigInteger d ;
+            d = getD(msgg[i]);
+            resolvingKnapsack(d, bitSet);
 
-            temp[i]=bitSet.toByteArray();
+            temp[i] = PiPermutation(temp, i, bitSet);
 
-
-            BitSet bitSet1 = new BitSet(64);
-            boolean temp12;
-            for (int j=0; j<64;j++)
-            {
-                temp12 = bitSet.get(StaticStuff.Permutation[j]);
-                bitSet1.set(j,temp12);
-            }
-            temp1[i]=bitSet1.toByteArray();
-            System.out.println("");
-            for (int j = 0; j < 6; j++) {
-                System.out.print(" " + (char) temp1[i][j]);
-            }
-
-
-           /* System.out.println(temp1.length);
-            System.out.println(temp1[i].length);*/
         }
+        StaticStuff.showArrayAsText(temp,8,size);
+        this.msg2D=temp;
+       this.msg = StaticStuff.saveAs1DBytesArray(this.msg2D,size);
+    }
+
+    private BigInteger getD(BigInteger bigInteger) {
+        BigInteger d;
+        d = (bigInteger.multiply(W.modInverse(this.modul)).mod(this.modul));
+        return d;
+    }
+
+    private byte[] PiPermutation(byte[][] temp, int i, BitSet bitSet) {
+        BitSet bitSet1 = new BitSet(64);
+        boolean temp12;
+        for (int j=0; j<64;j++)
+        {
+            temp12 = bitSet.get(StaticStuff.Permutation[j]);
+            bitSet1.set(j,temp12);
+        }
+        bitSet1.set(64,true);
+        temp[i]=bitSet1.toByteArray();
+        return temp[i];
+    }
+
+    private BitSet resolvingKnapsack(BigInteger d, BitSet bitSet) {
+        BigInteger result = new BigInteger("0");
+
+        for (int j = superArray.length -1 ; j >= 0; j--) {
+            result = result.add(superArray[j]);
+            if (result.compareTo(d) == 1) {
+                result = result.subtract(superArray[j]);
+                bitSet.set(j,false);
+            } else {
+                bitSet.set(j, true);
+            }
+            bitSet.set(64,true);
+        }
+        return bitSet;
     }
 
     private BigInteger conductMsg(byte[] msg, BigInteger[] A) {
@@ -127,5 +151,6 @@ public class Plecaczek {
         }
         return sum;
     }
+
 
 }
