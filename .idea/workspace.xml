@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8baa4164-ec0b-43fa-ad73-de5efc8308d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/Key.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Plecaczek.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Plecaczek.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MainController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,13 +43,13 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="dummy" value="13" />
-          <entry key="java" value="4987" />
+          <entry key="java" value="5054" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="4987" />
+          <entry key="JAVA" value="5054" />
           <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
@@ -84,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="267">
+              <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,14 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Key.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -111,8 +103,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/values/StaticStuff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="51">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <folding>
+                <element signature="method#saveAs2DBytesArray#0;class#StaticStuff#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/main/java/values/StaticStuff.java" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/values/HighValue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java" />
         <option value="$PROJECT_DIR$/src/main/java/algorithm/Key.java" />
+        <option value="$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java" />
       </list>
     </option>
   </component>
@@ -256,7 +251,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543152954476" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543155074182" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
@@ -378,13 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/values/StaticStuff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/values/HighValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -411,20 +399,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Key.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        <state relative-caret-position="153">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/values/StaticStuff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#saveAs2DBytesArray#0;class#StaticStuff#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Key.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="267">
+          <caret line="106" column="33" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

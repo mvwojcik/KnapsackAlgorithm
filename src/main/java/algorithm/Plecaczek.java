@@ -59,12 +59,11 @@ public class Plecaczek {
         for (int i = 0; i < size; i++) {
             results[i] = conductMsg(msg2D[i], A);
         }
-        System.out.println("***********-------------*******************");
         for (BigInteger temp : results) {
             System.out.println(temp);
         }
-        System.out.println("***********-------------*******************");
         msgg = results;
+        System.out.println("*****************************************");
         decrypt();
     }
 
@@ -72,13 +71,13 @@ public class Plecaczek {
         System.out.println("DECRYPTING\n");
         BigInteger d ;
         byte[][] temp1 = new byte [size][8];
-
         byte[][] temp = new byte[size][8];
+
         for (int i = 0; i < msgg.length; i++) {
             BitSet bitSet = new BitSet(64);
             bitSet.clear();
 
-            d = (msgg[i].modInverse(this.modul).mod(this.modul));
+            d = (msgg[i].multiply(W.modInverse(this.modul)).mod(this.modul));
             System.out.println("\nD = "+d);
             BigInteger result = new BigInteger("0");
             for (int j = superArray.length -1 ; j >= 0; j--) {
@@ -104,7 +103,10 @@ public class Plecaczek {
                 bitSet1.set(j,temp12);
             }
             temp1[i]=bitSet1.toByteArray();
-
+            System.out.println("");
+            for (int j = 0; j < 6; j++) {
+                System.out.print(" " + (char) temp1[i][j]);
+            }
 
 
            /* System.out.println(temp1.length);
