@@ -4,9 +4,12 @@ import algorithm.Plecaczek;
 
 import java.io.*;
 import java.math.BigInteger;
-import java.util.ArrayList;
+import java.math.MutableBigInteger;
 import java.util.LinkedList;
 import java.util.List;
+
+import static java.math.BigInteger.ONE;
+
 
 public final class StaticStuff {
     public static byte[] Permutation = {
@@ -112,5 +115,56 @@ public final class StaticStuff {
         }
         return temp;
     }
+    public static long nextPrime(long input){
+        int counter;
+        input++;
+        while(true){
+            counter = 0;
+            for(int i = 2; i <= Math.sqrt(input); i ++){
+                if(input % i == 0)  counter++;
+            }
+            if(counter == 0)
+                return input;
+            else{
+                input++;
+                continue;
+            }
+        }
+    }
+    public static long gcd(long a, long b) {
+        if (b==0) return a;
+        return gcd(b,a%b);
+    }
 
-}
+    public static long modInverse(long a, long m)
+    {
+        a = a % m;
+        for (long x = 1; x < m; x++)
+            if ((a * x) % m == 1)
+                return x;
+        return 1;
+    }
+    public BigInteger modInverse(BigInteger m) {
+
+        // Calculate (this mod m)
+        BigInteger modVal = this;
+        if (signum < 0 || (this.compareMagnitude(m) >= 0))
+            modVal = this.mod(m);
+
+        if (modVal.equals(ONE))
+            return ONE;
+
+        MutableBigInteger a = new MutableBigInteger(modVal);
+        MutableBigInteger b = new MutableBigInteger(m);
+
+        MutableBigInteger result = a.mutableModInverse(b);
+        return result.toBigInteger(1);
+    }
+    public long modInverse(long m,long x,int chuj) {
+        MutableBigInteger a
+
+        return 1L;
+    }
+
+
+    }

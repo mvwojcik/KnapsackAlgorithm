@@ -120,11 +120,13 @@ public class Plecaczek {
     private long getD(long temp) {
         long temp1;
         System.out.println();
-        System.out.println("Getting D:"+ Long.MAX_VALUE);
-        System.out.println("Getting D:"+ BigInteger.valueOf(W).modInverse(BigInteger.valueOf(this.modul)).mod(BigInteger.valueOf(this.modul)));
-        System.out.println("Getting D:"+ (temp1 = (((BigInteger.valueOf(temp).multiply((BigInteger.valueOf(W).modInverse(BigInteger.valueOf(this.modul))))).mod(BigInteger.valueOf(this.modul))).longValue())));
-        System.out.println("Getting D:"+ (BigInteger.valueOf(temp).multiply(BigInteger.valueOf(W).modInverse(BigInteger.valueOf(this.modul))).mod(BigInteger.valueOf(this.modul))));
+
+          System.out.println("Getting D:"+ (temp1 = (((BigInteger.valueOf(temp).multiply((BigInteger.valueOf(W).modInverse(BigInteger.valueOf(this.modul))))).mod(BigInteger.valueOf(this.modul))).longValue())));
+      //   System.out.println("Getting D:"+ (temp1 = temp*StaticStuff.modInverse(W,this.modul)));
+
         return temp1;
+
+
     }
 
     private byte[] PiPermutation(byte[][] temp, int i, BitSet bitSet) {
