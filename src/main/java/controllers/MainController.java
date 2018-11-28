@@ -97,7 +97,7 @@ StaticStuff.saveBytestoFile(plecaczek,extension);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            this.size = (fileContent.length % 8 == 0) ? (fileContent.length / 8) : ((fileContent.length / 8) + 1);
+            this.size = (fileContent.length % 4 == 0) ? (fileContent.length / 4) : ((fileContent.length / 4) + 1);
 
             return fileContent;
         } else {
