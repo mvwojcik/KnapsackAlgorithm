@@ -3,10 +3,10 @@ package values;
 import algorithm.Plecaczek;
 
 import java.io.*;
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+
 
 public final class StaticStuff {
     public static byte[] Permutation = {
@@ -112,5 +112,35 @@ public final class StaticStuff {
         }
         return temp;
     }
+    public static long nextPrime(long input){
+        int counter;
+        input++;
+        while(true){
+            counter = 0;
+            for(int i = 2; i <= Math.sqrt(input); i ++){
+                if(input % i == 0)  counter++;
+            }
+            if(counter == 0)
+                return input;
+            else{
+                input++;
+                continue;
+            }
+        }
+    }
+    public static long gcd(long a, long b) {
+        if (b==0) return a;
+        return gcd(b,a%b);
+    }
 
-}
+    public static long modInverse(long a, long m)
+    {
+        a = a % m;
+        for (long x = 1; x < m; x++)
+            if ((a * x) % m == 1)
+                return x;
+        return 1;
+    }
+
+
+    }

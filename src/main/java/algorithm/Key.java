@@ -2,8 +2,7 @@ package algorithm;
 
 import values.StaticStuff;
 
-import java.math.BigInteger;
-import java.util.BitSet;
+
 
 public class Key {
 
@@ -14,8 +13,8 @@ public class Key {
         long temporary;
         for (int i = 0; i < 32; i++) {
             temporary = W*(superArray[StaticStuff.Permutation[i]]);
-            BigInteger bigInteger = new BigInteger(String.valueOf(temporary));
-            temp[i] = bigInteger.mod(BigInteger.valueOf(modul)).longValue();
+
+            temp[i] = temporary%modul;
             System.out.print(""+ temp[i] +",");
         }
         return temp;
@@ -30,7 +29,7 @@ public class Key {
     }
 
     public long generateModul() {
-        long temp = (BigInteger.valueOf(pow(2,32)).nextProbablePrime()).longValue();
+        long temp = StaticStuff.nextPrime((long)Math.pow(2,32));
 
         return temp;//43 randomowo modul musi byc wiekszy od sumy wygenerowanego ciągu superrosnącego
     }
@@ -40,13 +39,16 @@ public class Key {
 
         for (int i=10; i<modul;i++)
         {
-            BigInteger bigInteger = new BigInteger(""+i);
-            if ((bigInteger.gcd(BigInteger.valueOf(modul))).longValue()==1L) {
+            if(StaticStuff.gcd(modul,i)==1L)
+            {
                 return i;
             }
+
         }
         return 1L;
     }
+
+
 
     public byte[] generatePIpermutation() {
         return StaticStuff.Permutation;

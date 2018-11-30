@@ -14,6 +14,6 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setResizable(false);
-        stage.setTitle("Wsiadaj mała");
+        stage.setTitle("Knapsack Algorithm");
     }
 }
