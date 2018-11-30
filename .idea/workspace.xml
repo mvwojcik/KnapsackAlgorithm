@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8baa4164-ec0b-43fa-ad73-de5efc8308d4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/values/StaticStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/values/StaticStuff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algorithm/Plecaczek.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algorithm/Plecaczek.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/values/StaticStuff.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/values/StaticStuff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/decrypted.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/decrypted.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/decrypted.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/encrypted.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/encrypted.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/encrypted.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/encrypted.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/encrypted.txt" afterDir="false" />
-    </list>
+    <list default="true" id="8baa4164-ec0b-43fa-ad73-de5efc8308d4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,14 +14,14 @@
     <session id="2132040889">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -96,20 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="46" column="36" lean-forward="true" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+            <state relative-caret-position="629">
+              <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,10 +91,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/values/StaticStuff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+            <state relative-caret-position="987">
+              <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -399,17 +384,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainFXML.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Key.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -426,10 +421,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/values/StaticStuff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="46" column="36" lean-forward="true" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        <state relative-caret-position="987">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -438,18 +433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/algorithm/Plecaczek.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/values/StaticStuff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="64" column="23" lean-forward="true" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
