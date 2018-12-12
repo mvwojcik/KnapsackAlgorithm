@@ -1,10 +1,8 @@
 package algorithm;
 
-import values.DuzaWartosc;
 import values.StaticStuff;
 import values.temp.Conducting;
 
-import java.math.BigInteger;
 import java.util.BitSet;
 
 public class Plecaczek {
@@ -122,10 +120,6 @@ public class Plecaczek {
     private long getD(long temp) {
         long temp1;
         System.out.println();
-
-       //   System.out.println("Getting D:"+ (temp1 = (((BigInteger.valueOf(temp).multiply((BigInteger.valueOf(W).modInverse(BigInteger.valueOf(this.modul))))).mod(BigInteger.valueOf(this.modul))).longValue())));
-      //   System.out.println("Getting D:"+ (temp1 = temp*StaticStuff.modInverse(W,this.modul)));
-       // System.out.println("Getting D:"+ (temp1 = (temp* DuzaWartosc.modInverse(W,this.modul))%this.modul));
         System.out.println("Getting D:"+ (temp1= (((Conducting.valueOf(temp).multiply((Conducting.valueOf(W).modInverse(Conducting.valueOf(this.modul))))).mod(Conducting.valueOf(this.modul))).longValue())));
 
         return temp1;

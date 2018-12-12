@@ -56,7 +56,9 @@ StaticStuff.saveBytestoFile(plecaczek,extension);
     public void openFileChooser() {
         FileChooser fc = new FileChooser();  //Inicjalizacja fc
         fc.setInitialDirectory(new File((System.getProperty("user.dir"))+"\\test"));
-        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("txt", "*.txt"),new FileChooser.ExtensionFilter("pdf","*.pdf"),
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("txt", "*.txt"),
+        new FileChooser.ExtensionFilter("pdf","*.pdf"),
+        new FileChooser.ExtensionFilter("png","*.png"),
         new FileChooser.ExtensionFilter("jpg", "*.jpg"));
 
         File selectedFile = fc.showOpenDialog(null); //przypisz wybrany w fc plik do selectedFile
@@ -78,7 +80,6 @@ StaticStuff.saveBytestoFile(plecaczek,extension);
         if (absolutePath == null) {
             if(listview.getItems().get(0) == null)
             {
-
                 throw new NullPointerException(" U have to choose item");
             }
             absolutePath = (String) listview.getItems().get(0);
